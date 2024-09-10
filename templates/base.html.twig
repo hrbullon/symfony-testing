@@ -1,17 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+        <title>{% block title %} ZayShop eCommerce {% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
+        <link rel="apple-touch-icon" href="{{ asset('img/apple-icon.png') }}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/templatemo.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
+        <!-- Load fonts style after rendering the layout styles -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+        <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
+
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}">
+    <!--
+        
+    TemplateMo 559 Zay Shop
+
+    https://templatemo.com/tm-559-zay-shop
+
+    -->
+</head>
     <body>
+        {# Start Modal #}
+        <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="w-100 pt-1 mb-5 text-right">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                        <button type="submit" class="input-group-text bg-success text-light">
+                            <i class="fa fa-fw fa-search text-white"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {# Close Modal #}
+
+        {# Start Top Nav #}
+        {% include 'components/top-nav.html.twig' %}
+        {# Close Top Nav #}
+
+        {# Header #}
+        {% include "components/nav.html.twig" %}        
+        {# Close Header #}
+
         {% block body %}{% endblock %}
+        
+        {# Footer #}
+        {% include "components/footer.html.twig" %}        
+        {# Close Footer #}
+
+        {# Start Script #}
+        <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
+        <script src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('js/templatemo.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
+        {# End Script #}
     </body>
 </html>

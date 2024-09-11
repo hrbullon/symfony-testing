@@ -16,4 +16,21 @@ class ProductsRepository {
         return $featuredProducts;
     }
 
+    public static function getAllProductsByShop()
+    {
+        $products = [];
+
+        for ($i=1; $i <= 11; $i++) { 
+            array_push($products, [
+                "name"  => "Oupidatat non",
+                "size"  => "M/L/X/XL",
+                "rate"  => rand(3,5),
+                "price" => "$250.00",
+                "image" => ($i < 10 )? "shop_0".$i.".jpg" : "shop_".$i.".jpg"
+            ]);
+        }
+
+        return $products;
+    }
+
 }

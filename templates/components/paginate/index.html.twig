@@ -1,0 +1,7 @@
+<ul class="pagination pagination-lg justify-content-end">
+    {% for page in 1..totalPages %}
+        <li class="page-item {% if currentPage == page %}disabled{% endif %}">
+            <a class="page-link {% if currentPage == page %}active{% endif %} rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="shop?page={{ page }}" tabindex="-1">{{ page }}</a>
+        </li>
+    {% endfor %}   
+</ul>

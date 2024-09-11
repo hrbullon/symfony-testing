@@ -1,0 +1,13 @@
+<li class="pb-3">
+    <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+        {{ category.name }}
+        <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+    </a>
+    <ul class="collapse list-unstyled pl-3">
+        {% for subcategory in category.subcategory %}
+            <li>
+                <a class="text-decoration-none" href="#">{{ subcategory.name }}</a>
+            </li>
+            {% endfor %}
+    </ul>
+</li>

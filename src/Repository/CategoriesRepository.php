@@ -15,5 +15,38 @@ class CategoriesRepository {
 
         return $categories;
     }
+    
+    public static function getAllCategoriesByShop() 
+    {
+        $categories = [
+            [ 
+                "name"=>"Gender", 
+                "subcategory"=>[ 
+                    [ "name" => "Men", "path" => "" ], 
+                    [ "name" => "Women", "path" => "" ] 
+                ], 
+                "path" => "#" 
+            ],
+            [ 
+                "name"=>"Sale", 
+                "subcategory"=>[ 
+                    [ "name" => "Sport", "path" => "" ], 
+                    [ "name" => "Luxury", "path" => "" ] 
+                ], 
+                "path" => "#" 
+            ],
+            [ 
+                "name"=>"Product", 
+                "subcategory"=>[ 
+                    [ "name" => "Bag", "path" => "" ], 
+                    [ "name" => "Sweather", "path" => "" ],
+                    [ "name" => "Sunglass", "path" => "" ] 
+                ], 
+                "path" => "#" 
+            ],
+        ];
+
+        return $categories;
+    }
 
 }
